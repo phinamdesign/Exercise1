@@ -6,24 +6,27 @@
 </head>
 <body>
 <script>
-    let math = Number(prompt("Nhập điểm toán"));
-    let literature = Number(prompt("Nhập điểm văn"));
-    let english = Number(prompt("Nhập điểm văn"));
-    let score=(math*2+literature+english*2)/5;
-    while (math>10 || math<0) {
-        math = Number(prompt("Nhập điểm toán"));
-    }
-    while (literature>10 || literature<0) {
-        literature = Number(prompt("Nhập điểm văn"));
-    }
-    while (english>10 || english<0) {
-        english = Number(prompt("Nhập điểm Anh"));
-    }
+    var math = Number(prompt("Nhập điểm toán"));
+    do {
+        math = Number(prompt("Nhập lại điểm toán"));
+    } while (math>10 || math<0);
+
+    var literature = Number(prompt("Nhập điểm văn"));
+    do {
+        literature = Number(prompt("Nhập lại điểm văn"));
+    } while (literature>10 || literature<0);
+
+    var english = Number(prompt("Nhập điểm anh"));
+    do {
+        english = Number(prompt("Nhập lại điểm Anh"));
+    } while (english>10 || english<0);
+
+    var score=(math*2+literature+english*2)/5;
     if (score<5){
         alert("Không đạt");
     }else  if (score>=5 && score<7.5){
         alert("Đạt");
-    }else if (score>=7.5 && score < 8.5 ){
+    }else if (score>=7.6 && score < 8.5 ){
         alert("Khá");
     }else {
         alert("Tốt");
